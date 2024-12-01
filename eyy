@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Special Girl</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 50px;
+            background-color: #ff69b4;
+            color: white;
+        }
+        section {
+            margin: 20px 0;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #ff69b4;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .message {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .photo-gallery img {
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>For My Lovely Girlfriend</h1>
+    <p>Your love makes every day special!</p>
+</header>
+
+<section>
+    <h2>Message for You</h2>
+    <div class="message">
+        <p>Hey love! Just wanted to remind you how much you mean to me. I can't wait until we can be together again! ❤️</p>
+    </div>
+</section>
+
+<section>
+    <h2>Our Special Moments</h2>
+    <div class="photo-gallery">
+        <h3>Photo Gallery</h3>
+        <img src="your-photo1.jpg" alt="Special Moment 1">
+        <img src="your-photo2.jpg" alt="Special Moment 2">
+        <img src="your-photo3.jpg" alt="Special Moment 3">
+        <!-- Add more photos as needed -->
+    </div>
+</section>
+
+<section>
+    <h2>Countdown to Our Next Meeting</h2>
+    <div id="countdown"></div>
+</section>
+
+<footer>
+    <p>Love you always! 💖</p>
+</footer>
+
+<script>
+    // Countdown Timer
+    const countdownDate = new Date("YYYY-MM-DD").getTime(); // Set your next meeting date here
+
+    const x = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = countdownDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s ";
+
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("countdown").innerHTML = "It's time to meet!";
+        }
+    }, 1000);
+</script>
+
+</body>
+</html>
